@@ -1,0 +1,213 @@
+.problems {
+    background: url("../images/problemsBg.svg") no-repeat center / auto 100%;
+
+    .container {
+        padding-top: 200px;
+        padding-bottom: 135px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .titleBlock {
+        position: relative;
+
+        img {
+            position: absolute;
+            top: -37px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: 700;
+        color: $brown;
+        margin-bottom: 40px;
+        font-size: 24px;
+        margin-top: 5px;
+    }
+
+    .content {
+        display: flex;
+    }
+
+    .leftSide {
+        width: 41%;
+
+        .img {
+            position: relative;
+
+            .decor {
+                position: absolute;
+                left: 68%;
+                top: 1%;
+                width: 52%;
+            }
+        }
+
+        p {
+            display: inline-block;
+
+            &:nth-child(2) {
+                font-size: 18px;
+                font-weight: 700;
+                margin: 24px 0 26px;
+            }
+
+            &:nth-child(3) {
+                font-size: 16px;
+            }
+
+            &:nth-child(4) {
+                font-size: 24px;
+                font-weight: 700;
+                margin-top: 35px;
+                color: $brown;
+            }
+        }
+    }
+
+    .rightSide {
+        margin-left: 20px;
+        padding-top: 25px;
+        width: calc(59% - 20px);
+
+        .text {
+            padding-left: 87px;
+            margin-bottom: 62px;
+
+            * {
+                display: block;
+            }
+
+            &>p {
+                font-size: 14px;
+                color: $brown;
+            }
+        }
+
+        p {
+            &:nth-child(2) {
+                margin-top: 10px;
+            }
+        }
+
+        strong {
+            color: $brown;
+            font-size: 18px;
+        }
+
+        .img {
+            position: relative;
+
+            .petr {
+                width: 20%;
+                position: absolute;
+                top: -12%;
+                left: 13%;
+            }
+
+            .julia {
+                width: 31%;
+                position: absolute;
+                top: -11%;
+                left: 46%;
+            }
+        }
+    }
+}
+
+@media (max-width: 678px) {
+    .problems {
+        .container {
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+
+        .content {
+            flex-direction: column;
+
+
+
+            .rightSide {
+                padding: 0;
+                order: -1;
+                width: 100%;
+                margin-left: 0;
+                position: relative;
+
+                .img {
+                    position: absolute;
+                    top: 92%;
+                    left: 50%;
+                    width: 608px;
+                    transform: translateX(-50%);
+                    min-width: 608px;
+                    width: 100%;
+
+                    .petr, .julia {
+                        display: none;
+                    }
+                }
+
+                .text {
+                    padding: 0;
+
+                    .pars {
+                        margin-left: 170px;
+                        font-size: 14px;
+                        margin-bottom: 30px;
+                        min-height: 214px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+                }
+            }
+
+            .leftSide {
+                width: 100%;
+                margin-top: 380px;
+
+                .img {
+                    position: absolute;
+                    top: 20%;
+                    left: -35px;
+                    width: 60%;
+                    max-width: 217px;
+
+                    .decor {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 374px) {
+    .problems {
+        .content {
+            .leftSide {
+                .img {
+                    width: 180px;
+                }
+            }
+
+            .rightSide {
+                .text {
+                    .pars {
+                        margin-left: 130px;
+                    }
+                }
+            }
+        }
+    }
+}

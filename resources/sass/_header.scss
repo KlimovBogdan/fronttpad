@@ -1,0 +1,410 @@
+.header {
+    margin-bottom: -107px;
+
+    .callBackThanksModal {
+        .modal {
+            &-header {
+                @include modalCross;
+                padding: 80px 0 85px;
+                border: none;
+
+                h2 {
+                    position: relative;
+                    margin: 0 auto;
+                    text-align: center;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: -60px;
+                        height: 35px;
+                        width: 164px;
+                        background: url("../images/callBackModalThanksBg.svg") no-repeat center;
+                    }
+                }
+            }
+
+            &-body {
+                padding: 0 80px 50px;
+                text-align: center;
+
+                h3 {
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: $brown;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    color: $black;
+                    font-size: 18px;
+                }
+
+                .actionBtn {
+                    @include actionBtn;
+                    margin: 79px auto 0;
+                }
+            }
+
+            &-content {
+                border-radius: 20px;
+                background: $white;
+            }
+
+            &-dialog {
+                max-width: 520px;
+            }
+        }
+    }
+
+    .callBackModal {
+        .modal {
+            &-dialog {
+                max-width: 520px;
+            }
+
+            &-content {
+                border-radius: 20px;
+                background: $white;
+            }
+
+            &-header {
+                padding: 50px 20px 92px;
+                border: none;
+                @include modalCross;
+
+                h2 {
+                    position: relative;
+                    margin: 0 auto;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: -40px;
+                        height: 32px;
+                        width: 178px;
+                        background: url("../images/callBackModalBg.svg") no-repeat center;
+                    }
+                }
+            }
+
+            &-body {
+                padding: 0 20px 50px;
+
+                form {
+                    width: 100%;
+                    max-width: 340px;
+                    text-align: center;
+                    margin: 0 auto;
+                    border: none;
+
+                    input {
+                        &:not(:last-child) {
+                            width: 100%;
+                            height: 40px;
+                            padding: 0 24px;
+                            font-size: 16px;
+                            margin-bottom: 20px;
+                            border-radius: 30px;
+                            border: 2px solid $lightpink;
+                        }
+                    }
+
+                    input[type="checkbox"] {
+                        @include squareCheckbox;
+                    }
+
+                    .callBtn {
+                        @include actionBtn;
+                        width: 100%;
+                        height: 60px;
+                        margin-top: 40px;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    nav {
+        ul {
+            display: flex;
+            justify-content: space-between;
+
+            li {
+                &:not(:last-child) {
+                    margin-right: 30px;
+                }
+            }
+
+            a {
+                color: $gray;
+                font-weight: 700;
+                transition: .3s;
+                border-bottom: 2px dashed transparent;
+                outline: none;
+
+                &:focus {
+                    color: $brown;
+                    border-bottom: 2px dashed $brown;
+                }
+
+                &:hover {
+                    color: $brown;
+                    border-bottom: 2px dashed $brown;
+                }
+            }
+        }
+    }
+
+    .contacts {
+        .tel {
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            display: block;
+
+            svg {
+                position: absolute;
+                left: 0px;
+                transition: .3s;
+                top: 1px;
+
+                .circle {
+                    fill: #1FC173;
+                    transition: .3s;
+                }
+            }
+
+            p {
+                font-size: 18px;
+                font-weight: 700;
+                color: $black;
+                padding-left: 30px;
+                transition: .3s;
+            }
+
+            &:focus {
+                svg {
+                    transform: rotate(30deg);
+
+                    .circle {
+                        fill: $brown;
+                    }
+                }
+
+                p {
+                    color: $brown;
+                }
+            }
+
+            &:hover {
+                svg {
+                    transform: rotate(30deg);
+
+                    .circle {
+                        fill: $brown;
+                    }
+                }
+
+                p {
+                    color: $brown;
+                }
+            }
+        }
+
+        .city {
+            color: $brown;
+            font-size: 16px;
+            padding-left: 30px;
+        }
+    }
+
+    .callBtn {
+        @include callBtn;
+    }
+
+    .mobCallBtn {
+        display: none;
+    }
+
+    .burger {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1099px) {
+    .header {
+        nav {
+            ul {
+                a {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .contacts {
+            .tel {
+                p {
+                    font-size: 16px;
+                }
+            }
+
+            .city {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .header {
+        .logo {
+            display: none;
+        }
+
+        nav {
+            display: none;
+        }
+
+        .contacts {
+            .tel {
+                p {
+                    font-size: 18px;
+                    padding-left: 0;
+                }
+
+                svg {
+                    display: none;
+                }
+            }
+
+            .city {
+                font-size: 16px;
+                padding-left: 0;
+            }
+        }
+
+        .burger {
+            display: block;
+
+            rect {
+                transition: .3s;
+            }
+
+            .burgerLeft, .burgerRight {
+                transform-origin: center;
+            }
+        }
+
+        .callBtn {
+            display: none;
+        }
+
+        .mobCallBtn {
+            display: block;
+        }
+    }
+}
+
+
+
+@media (max-width: 576px) {
+    .header {
+        .callBackThanksModal {
+            .modal {
+                &-dialog {
+                    max-width: 335px;
+                    margin: 0 auto;
+                }
+
+                &-header {
+                    padding: 50px 15px 75px;
+
+                    h2 {
+                        &:after {
+                            bottom: -50px;
+                        }
+                    }
+                }
+
+                &-body {
+                    padding: 0 20px 60px;
+
+                    .actionBtn {
+                        margin-top: 84px;
+                    }
+                }
+            }
+        }
+
+        .callBackModal {
+            .modal {
+                &-dialog {
+                    max-width: 335px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                &-header {
+                    padding-bottom: 72px;
+
+                    h2 {
+                        text-align: center;
+                        line-height: 1;
+                    }
+                }
+
+                &-body {
+                    form {
+                        max-width: 255px;
+
+                        input {
+                            &:not(:last-child) {
+                                height: 50px;
+                            }
+                        }
+
+                        .callBtn {
+                            margin-top: 20px;
+                        }
+
+                        input[type="checkbox"] {
+                            &+label {
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .header {
+        .contacts {
+            .tel {
+                p {
+                    font-size: 16px;
+                }
+            }
+
+            .city {
+                font-size: 14px;
+            }
+        }
+    }
+}

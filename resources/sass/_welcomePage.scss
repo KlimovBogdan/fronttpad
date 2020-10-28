@@ -1,0 +1,217 @@
+.welcomePage {
+    background: url('../images/welcomePageBg.png') no-repeat center / cover;
+    padding-top: 107px;
+    pointer-events: none;
+
+    .welcome__container {
+        position: relative;
+        pointer-events: auto;
+
+        .free {
+            position: absolute;
+            top: 86px;
+            left: 47%;
+        }
+
+        .special {
+            position: absolute;
+            left: 42%;
+            top: 332px;
+        }
+
+        h1 {
+            margin-bottom: 38px;
+            font-size: 106px;
+            line-height: 0.71;
+            letter-spacing: .07em;
+        }
+
+        h2 {
+            color: $brown;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 70px;
+            letter-spacing: .07em;
+        }
+
+        .actionBtn {
+            @include actionBtn;
+        }
+
+        .ps {
+            color: $purple;
+            margin-top: 10px;
+            margin-bottom: 80px;
+            font-style: italic;
+            font-size: 16px;
+        }
+
+        ul {
+            border-radius: 10px;
+            box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.25);
+            background-color: $white;
+            display: flex;
+            justify-content: space-between;
+
+            li {
+                position: relative;
+                height: 218px;
+                width: 160px;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                padding-top: 140px;
+                font-size: 15px;
+
+
+                &:nth-child(1) {
+                    background: url("../images/welcomeIcon1.svg") no-repeat center 40px;
+                }
+
+                &:nth-child(2) {
+                    background: url("../images/welcomeIcon2.svg") no-repeat center 40px;
+                }
+
+                &:nth-child(3) {
+                    background: url("../images/welcomeIcon3.svg") no-repeat center 40px;
+                }
+
+                &:nth-child(4) {
+                    background: url("../images/welcomeIcon4.svg") no-repeat center 40px;
+                }
+
+                &:nth-child(5) {
+                    background: url("../images/welcomeIcon5.svg") no-repeat center 40px;
+
+                    .hover__content {
+                        font-size: 12px;
+                        line-height: 1.4;
+                    }
+                }
+
+                &:nth-child(6) {
+                    background: url("../images/welcomeIcon6.svg") no-repeat center 40px;
+                }
+
+                .hover__content {
+                    position: absolute;
+                    opacity: 0;
+                    background: $gradient;
+                    color: $white;
+                    font-size: 14px;
+                    display: flex;
+                    align-items: center;
+                    text-align: left;
+                    padding: 0 10px;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    transition: .3s;
+                    border-radius: 10px;
+                }
+
+                &:hover {
+                    .hover__content {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .welcomePage {
+        background: linear-gradient(180deg, rgba(247, 208, 218, 0.5) 0%, rgba(253, 243, 247, 0.5) 100%), #FFFFFF;
+
+        .welcome__container {
+            background: url("../images/welcomeMobBg.png") no-repeat 90% top;
+
+            .special{
+                font-size: 12px;
+                left: auto;
+                top: 300px;
+                right: 430px;
+            }
+
+            .free {
+                font-size: 12px;
+                left: auto;
+                right: 360px;
+                top: 230px;
+            }
+
+            .actionBtn {
+                width: 250px;
+                height: 60px;
+                box-shadow: 0px 0px 40px #F096B3, inset 0px -4px 4px rgba(0, 0, 0, 0.15);
+
+                &:before {
+                    background: $pink;
+                }
+            }
+
+            .ps {
+                margin-bottom: 40px;
+                font-size: 12px;
+            }
+
+            h1 {
+                font-size: 56px;
+                margin: 30px 0 19px;
+            }
+
+            h2 {
+                font-size: 18px;
+                margin-bottom: 230px;
+            }
+
+            ul {
+                flex-wrap: wrap;
+
+                li {
+                    width: 33%;
+
+                    p {
+                        max-width: 160px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .welcomePage {
+        .welcome__container {
+            background: url("../images/welcomeMobBg.png") no-repeat 30vw top;
+
+            .free {
+                right: auto;
+                left: 19vw;
+                top: 183px;
+            }
+
+            .special {
+                left: 4vw;
+                right: auto;
+                top: 246px;
+            }
+
+            ul {
+                margin: 0 -20px;
+
+                li {
+                    width: 50%;
+
+                    .hover__content {
+                        display: none;
+                    }
+                }
+            }
+
+
+        }
+    }
+}

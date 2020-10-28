@@ -1,0 +1,236 @@
+$black: #210606;
+$gradient: linear-gradient(92.34deg, #F2B5C9 43.42%, #EF95B2 98.27%);
+$gray: #B0A2A2;
+$purple: #B385BB;
+$orange: rgb(255, 206, 189);
+$green: #1FC173;
+$brown: #9F3E4B;
+$white: #fff;
+$pink: #EC6985;
+$lightpink: #f1b2c7;
+
+@mixin callBtn {
+    font-size: 16px;
+    font-weight: 700;
+    color: $brown;
+    width: 160px;
+    padding: 10px 0;
+    max-height: 40px;
+    border-radius: 30px;
+    border: 2px solid $brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+    cursor: pointer;
+    outline: none;
+
+    &:focus {
+        color: $white;
+        background-color: $brown;
+    }
+
+    &:hover {
+        color: $white;
+        background-color: $brown;
+    }
+}
+
+@mixin actionBtn {
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 40px;
+    z-index: 1;
+    display: block;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 60px;
+    transition: .3s;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+
+    &:focus {
+        color: $white;
+        
+        &:after {
+            opacity: 1;
+        }
+    }
+
+    &:before {
+        box-shadow: inset 0px -4px 4px rgba(0, 0, 0, 0.15);
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        background: $gradient;
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
+        z-index: -2;
+    }
+
+    &:after {
+        opacity: 0;
+        transition: .3s;
+        z-index: -1;
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        background: $pink;
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
+        box-shadow: 0px 0px 40px #F096B3, inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+    }
+    
+    &:hover {
+        color: $white;
+        
+        &:after {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin squareCheckbox {
+    position: absolute;
+    opacity: 0;
+    z-index: -2;
+
+    &:focus {
+        &+label {
+            &:before {
+                border-color: $pink;
+            }
+        }
+    }
+
+    &:checked {
+        &+label {
+            &:after {
+                content: "";
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                left: 4px;
+                top: 3px;
+                background: $gradient;
+            }
+        }
+    }
+
+    &+label {
+        margin-bottom: 0;
+        font-size: 14px;
+        position: relative;
+        width: 100%;
+        padding-left: 24px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            left: 0px;
+            top: -1px;
+            border: 2px solid $lightpink;
+        }
+    }
+}
+
+@mixin roundCheckbox {
+    position: absolute;
+    opacity: 0;
+    z-index: -2;
+
+    &:focus {
+        &+label {
+            &:before {
+                border-color: $pink;
+            }
+        }
+    }
+
+    &:checked {
+        &+label {
+            &:after {
+                content: "";
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                left: 4px;
+                top: 3px;
+                background: $gradient;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &+label {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        font-size: 14px;
+        position: relative;
+        width: 100%;
+        padding-left: 24px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            left: 0px;
+            top: -1px;
+            border: 2px solid $lightpink;
+            border-radius: 50%;
+        }
+    }
+}
+
+@mixin modalCross {
+    position: relative;
+
+    button {
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background: none;
+        border: none;
+        opacity: 1;
+        outline: none;
+
+    &:focus {
+        path {
+            fill: $brown;
+        }
+    }
+
+        svg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+
+            path {
+                transition: .3s;
+            }
+        }
+
+        &:hover {
+            path {
+                fill: $brown;
+            }
+        }
+    } 
+}
+

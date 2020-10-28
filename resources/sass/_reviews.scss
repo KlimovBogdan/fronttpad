@@ -1,0 +1,407 @@
+@mixin active {
+    border: 2px solid transparent;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15), 2px 4px 20px rgba(0, 0, 0, 0.1);
+
+    .review {
+        &__text {
+            
+        }
+    }
+}
+
+.reviews {
+    padding-top: 65px;
+    max-width: 1780px;
+    margin: 0 auto;
+    transition: .5s;
+    padding-bottom: 50px;
+    position: relative;
+
+    h2 {
+        text-align: center;
+    }
+
+    .section__intro {
+        font-weight: 700;
+        font-size: 36px;
+        color: $brown;
+        margin-bottom: 10px;
+    }
+    .slickWrapper {
+        position: relative;
+    }
+
+    .controls {
+        text-align: center;
+        position: absolute;
+        top: 110%;
+        z-index: 1;
+        left: 50%;
+        transform: translateX(-50%);
+        align-items: center;
+
+        p {
+            font-weight: 700;
+            color: $black;
+            font-size: 18px;
+        }
+    }
+
+    .slick-prev {
+        transform: rotate(180deg) translateX(200%);  
+    }
+
+    .slick-arrow {
+        position: absolute;
+        top: 108%;
+        left: 50%;
+        color: transparent;
+        border: none;
+        border-radius: 50%;
+        width: 42px;
+        height: 42px;
+        outline: none;
+        background: url("../images/reviewsArrow.svg") no-repeat center $white;
+
+        &:after {
+            z-index: 1;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 42px;
+            height: 42px;
+            background: $gradient;
+            border-radius: 50%;
+            transition: .3s;
+            opacity: 0;
+        }
+
+        &:before {
+            border-radius: 50%;
+            z-index: 2;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 42px;
+            height: 42px;
+            background: url("../images/reviewsArrowWhite.png") no-repeat center;
+            transition: .3s;
+            opacity: 0;
+        }
+
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+
+    .slick-next {
+        transform: translateX(100%);
+    }
+
+    ul {
+        margin-bottom: 170px;
+        margin-top: 53px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .slick-track {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    li {
+        width: calc(33.333% - 20px);
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 20px;
+
+        &.slick-current+li {
+            .review {
+                @include active;
+            }
+        }
+
+        &.first {
+            .review__ava {
+                background: url("../images/reviewAva1.jpg") no-repeat center / cover;
+            }
+        }
+
+        &.second {
+            .review__ava {
+                background: url("../images/reviewAva2.jpg") no-repeat center / cover;
+            }
+        }
+
+        &.third {
+            .review__ava {
+                background: url("../images/reviewAva3.jpg") no-repeat center / cover;
+            }
+        }
+    }
+
+    .review {
+        padding: 20px 30px;
+        border-radius: 20px;
+        border: 2px solid $gray;
+        width: 100%;
+        max-width: 520px;
+        transition: .3s;
+        margin: 0;
+        background-color: $white;
+
+        &__header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        &__ava {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 20px;
+            min-width: 60px;
+        }
+
+        &__media {
+            display: flex;
+            justify-content: space-between;
+            margin-left: auto;
+            width: 100px;
+            justify-self: flex-end;
+            float: right;
+            margin-left: 20px;
+
+            img {
+                &:not(:last-child) {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        &__name {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        &__date {
+            font-size: 14px;
+            margin-top: 2px;
+        }
+
+        &__text {
+            font-size: 14px;
+
+            p {
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            strong {
+                margin-bottom: 10px;
+                display: block;
+            }
+        }
+    }
+}
+
+.instagram {
+    position: relative;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15), 2px 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    height: 200px;
+    background: #f5f4f4;
+    overflow-x: hidden;
+
+    img {
+        position: absolute;
+        min-width: 1920px;
+        height: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+    }
+
+    .igLink {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 260px;
+        height: 120px;
+        background: white;
+        border-radius: 10px;
+        transition: .3s;
+        cursor: pointer;
+
+        .bg {
+            width: 100%;
+            height: 100%;
+            background: $gradient;
+            border-radius: 10px;
+            opacity: 0;
+            transition: .3s;
+        }
+
+        .gradient {
+            opacity: 0;
+            transition: .3s;
+        }
+
+        .link {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+
+        .invis {
+            display: none;
+            text-align: center;
+            font-weight: 700;
+            font-size: 18px;
+            color: $white;
+        }
+
+        .vis {
+            font-weight: 700;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        &:hover {
+            .bg {
+                opacity: 1;
+            }
+
+            &:after {
+                border-color: $white;
+            }
+
+            .gradient {
+                opacity: 1;
+            }
+
+            .vis {
+                display: none;
+            }
+
+            .invis {
+                display: block;
+            }
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            width: 250px;
+            height: 110px;
+            border-radius: 10px;
+            border: 2px dashed $pink;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .reviews {
+        padding: 0 20px;
+
+        .section__intro {
+            font-size: 18px;
+        }
+
+        .section__title {
+            line-height: 0.9;
+        }
+
+        .controls, .slick-arrow {
+            display: none;
+        }
+
+        ul {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 112px;
+            margin-top: 30px;
+
+            li {
+                width: 100%;
+                max-width: 450px;
+                padding-right: 0;
+                padding-left: 0;
+
+                .review {
+                    &__media {
+                        margin-left: 0;
+                    }
+                }
+
+                &:nth-child(n) {
+                    margin-bottom: 0;
+                }
+
+                &:nth-last-child(-n + 3) {
+                    display: none;
+                }
+            }
+
+            .review {
+                @include active;
+                position: relative;
+                padding-bottom: 90px;
+
+                
+
+                &__media {
+                    position: absolute;
+                    left: 50%;
+                    bottom: 40px;
+                    transform: translateX(-50%);
+                    width: 120px;
+                }
+
+                &__text {
+                    font-size: 14px;
+                }
+
+                &__ava {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .instagram {
+            margin-top: 50px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .instagram {
+        background: url('../images/igMobBg.jpg') no-repeat center / cover;
+        height: 100vw;
+
+        img {
+            display: none;
+        }
+    }
+}

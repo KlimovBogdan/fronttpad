@@ -1,0 +1,152 @@
+.enjoy {
+    background: url("../images/enjoyBg.svg") no-repeat center / cover;
+    text-align: center;
+    position: relative;
+
+    .lowerDecor {
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100vw;
+        z-index: 2;
+    }
+
+    .container {
+        padding: 80px 0 100px;
+    }
+
+    .content {
+        max-width: 790px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        z-index: 1;
+        position: relative;
+
+        .mom {
+            position: absolute;
+            bottom: -30%;
+            left: 91%;
+        }
+
+        .desktop {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            width: 100%;
+        }
+
+        .mob {
+            display: none;
+        }
+    }
+
+    p {
+        margin: 10px 0 40px;
+        color: $brown;
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    .actionBtn {
+        @include actionBtn;
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1500px) {
+    .enjoy {
+        overflow: hidden;
+
+        .lowerDecor {
+            transform: scale(1.4);
+        }
+
+        .content {
+            .mom {
+                left: 80%;
+                bottom: -40%;
+                transform: scale(0.9); 
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .enjoy {
+        background: url("../images/enjoyMobBg.svg") no-repeat center / auto 100% rgba(255, 206, 189, .4);
+
+        .container {
+            padding: 170px 20px 100px;
+        }
+
+        .content {
+            padding-right: 0;
+            position: relative;
+            background: $white;
+            max-width: 335px;
+            margin: 0 auto;
+            border-radius: 20px;
+            z-index: 1;
+
+            .mom {
+                width: 160px;
+                bottom: 95%;
+                left: 171px;
+                z-index: -2;
+            }
+
+            .desktop {
+                display: none;
+            }
+
+            .mob {
+                display: block;
+                position: absolute;
+                left: 0;
+                z-index: -1;
+                top: 0;
+                width: 100%;
+            }
+
+            h2 {
+                line-height: 1;
+            }
+
+            p {
+                font-size: 18px;
+                max-width: 200px;
+                margin: 13px auto 20px;
+                text-align: center;
+            }
+        }
+
+        .actionBtn {
+            max-width: 275px;
+        }
+    }
+}
+
+@media (max-width: 365px) {
+    .enjoy {
+        .content {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            max-width: 280px;
+
+            p {
+                margin-bottom: 13px;
+            }
+
+            .mom {
+                left: 40%;
+            }
+
+            .actionBtn {
+                transform: scale(.9);
+            }
+        }
+    }
+}

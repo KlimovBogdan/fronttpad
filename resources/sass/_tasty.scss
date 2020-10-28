@@ -1,0 +1,582 @@
+.tasty {
+    background: url("../images/tastyBg.svg") no-repeat center / auto 100%;
+
+    .aboutModal, .tastyModal {
+        .modal {
+            &-dialog {
+                width: 100vw;
+                max-width: 450px;
+                max-height: none;
+                margin: 0 auto;
+            }
+
+            &-header {
+                padding: 220px 0 330px;
+                display: flex;
+                flex-direction: column;
+                border: none;
+                background: url("../images/aboutModalMobBg.png") no-repeat center top $orange;
+                @include modalCross;
+
+                button {
+                    path {
+                        fill: $white
+                    }
+                }
+
+
+                .section__title {
+                    max-width: 263px;
+                    margin: 0 auto;
+                    text-align: center;
+                    color: $brown;
+                    line-height: 1;
+                }
+
+                p {
+                    text-align: center;
+                    max-width: 300px;
+                    margin: 12px auto 0;
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: $brown;
+                }
+            }
+
+            &-body {
+                padding: 0 0 60px;
+                line-height: 1.7;
+                .textBlock {
+                    padding: 50px 20px;
+                    font-size: 16px;
+                    color: $black;
+
+                    &:nth-child(2) {
+                        background:  rgba(255, 206, 189, .2);
+                    }
+
+                    &:nth-child(3) {
+                        margin-bottom: 90px;
+                        padding-bottom: 0;
+                        position: relative;
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            left: 50%;
+                            top: calc(100% + 20px);
+                            transform: translateX(-50%);
+                            width: 240px;
+                            height: 30px;
+                            background: url('../images/aboutModalDecor.svg') no-repeat center / cover;
+                        }
+                    }
+
+                    strong {
+                        margin-bottom: 10px;
+                    }
+
+                    h3 {
+                        margin-bottom: 20px;
+                        font-size: 30px;
+                        color: $brown;
+                        font-weight: 700;
+                    }
+
+                    .brownText {
+                        font-size: 18px;
+                        font-weight: 700;
+                        margin-top: 20px;
+                    }
+
+                    .text {
+                        p {
+                            &:not(:last-child) {
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+
+                .callBtn {
+                    @include callBtn;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+    .tastyModal {
+        .modal {
+            &-header {
+                background: none;
+                position: relative;
+                z-index: 1;
+
+                &:before {
+                    z-index: -1;
+                    position: absolute;
+                    content: '';
+                    left: 20px;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: url("../images/tastyModalMobBg.png") no-repeat center top;
+                }
+
+                &:after {
+                    z-index: -2;
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: $gradient;
+                }
+            }
+
+            &-body {
+                .textBlock {
+                    &:nth-child(1) {
+                        .comment {
+                            margin: 20px 0;
+                            padding: 30px 20px;
+                            border-radius: 20px;
+                            border: 5px dashed $orange;
+
+                            p {
+                                font-size: 24px;
+                                font-weight: 700;
+                                color: $pink;
+                                text-align: center;
+                                max-width: 640px;
+                            }
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        background: rgba(241, 178, 199, .2);
+                        .text {
+                            .separate {
+                                margin: 40px 0;
+                            }
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        margin-bottom: 0;
+                        padding-bottom: 40px;
+
+                        &:after {
+                            display: none;
+                        }
+
+                        .text {
+                            .summary {
+                                margin-top: 20px;
+                                font-size: 24px;
+                                font-weight: 700;
+                                color: $black;
+                            }
+                        }
+                    }
+
+                    &:nth-child(4) {
+                        background: rgba(255, 206, 189, .2);
+
+                        position: relative;
+
+                        &:after {
+                            position: absolute;
+                            content: '';
+                            width: 51px;
+                            height: 74px;
+                            bottom: 75px;
+                            right: 0;
+                            background: url("../images/tastyModalDecor2.svg") no-repeat center;
+                        }
+
+                        h3 {
+                            position: relative;
+                            display: inline-block;
+
+                            &:after {
+                                position: absolute;
+                                content: '';
+                                width: 57px;
+                                height: 55px;
+                                top: 23px;
+                                right: -73px;
+                                background: url("../images/tastyModalDecor1.svg") no-repeat center;
+                            }
+                        }
+
+                        .text {
+                            .summary {
+                                margin-top: 20px;
+                                font-size: 24px;
+                                font-weight: 700;
+                                color: $black;
+                            }
+                        }
+                    }
+
+                    &:nth-child(5) {
+                        position: relative;
+                        margin-bottom: 90px;
+                        padding-bottom: 0;
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            left: 50%;
+                            top: calc(100% + 20px);
+                            transform: translateX(-50%);
+                            width: 240px;
+                            height: 30px;
+                            background: url('../images/aboutModalDecor.svg') no-repeat center / cover;
+                        }
+
+                        .text {
+                            .separate {
+                                margin: 40px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .container {
+        padding-bottom: 223px;
+    }
+
+    .quote {
+        font-size: 18px;
+        color: $brown;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .moreBtn__1 {
+        @include callBtn;
+        margin: 0 auto;
+    }
+
+    .moreBtn__2 {
+        @include callBtn;
+        margin-left: 46px;
+    }
+
+    .section__title__block {
+        position: relative;
+        margin-top: 264px;
+
+        img {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 110%;
+        }
+    } 
+
+    h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+   
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li {
+            width: calc(33.333% - 13.333px);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            line-height: 1.2;
+            position: relative;
+            box-sizing: border-box;
+            padding: 18px 20px 18px 110px;
+            z-index: 1;
+            background: white;
+            border: 2px solid #F1B3C8;
+
+
+            &:nth-child(1) {
+                background: url("../images/tastyIcon1.svg") no-repeat 7.5% center $white;
+            }
+
+            &:nth-child(2) {
+                background: url("../images/tastyIcon2.svg") no-repeat 7.5% center $white;
+            }
+
+            &:nth-child(3) {
+                background: url("../images/tastyIcon3.svg") no-repeat 7.5% center $white;
+            }
+
+            &:nth-child(4) {
+                background: url("../images/tastyIcon4.svg") no-repeat 7.5% center $white;
+            }
+
+            &:nth-child(5) {
+                background: url("../images/tastyIcon5.svg") no-repeat 7.5% center $white;
+            }
+
+            &:nth-child(6) {
+                background: url("../images/tastyIcon6.svg") no-repeat 7.5% center $white;
+            }
+
+            &:not(:nth-child(3n)) {
+                margin-right: 20px;
+            }
+
+            &:not(:nth-last-child(-n + 3)) {
+                margin-bottom: 20px;
+            }
+
+            strong {
+                color: black;
+            }
+        }
+    }
+
+    .menu {
+        margin: 140px 0 40px;
+        color: $black;
+        position: relative;
+
+        .decor {
+            position: absolute;
+            top: -80px;
+            left: 0;
+            
+        }
+
+        .img {
+            position: absolute;
+            left: 540px;
+            top: 50px;
+            transform: scale(1);
+        }
+
+        strong {
+            font-weight: 600;
+            font-size: 24px;
+            margin-bottom: 40px;
+            margin-left: 50px;
+            display: block;
+            max-width: 600px;
+        }
+
+        p {
+            padding-left: 50px;
+            display: block;
+            font-size: 18px;
+            max-width: 470px;
+
+            &:nth-child(4) {
+                background: url("../images/menuIcon2.svg") no-repeat left center;
+            }
+
+            &:nth-child(3) {
+                background: url("../images/menuIcon1.svg") no-repeat left center;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .tasty {
+        .menu {
+            p {
+                font-size: 16px;
+            }
+
+            .img {
+                width: 35vw;
+                left: 480px;
+                top: 85px;
+            }
+        }
+
+        ul {
+            justify-content: center;
+
+            li {
+                width: calc(50% - 10px);
+                max-width: 350px;
+
+                &:nth-child(n) {
+                    margin-right: 0;
+
+                    div {
+                        background-position: 20px center;
+                    }
+                }
+
+                &:not(:nth-child(2n)) {
+                    margin-right: 20px;
+                }
+
+                &:not(:nth-last-child(-n+2)) {
+                    margin-bottom: 20px;
+                }
+
+                div {
+                    padding-left: 112px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    .tasty {
+        .aboutModal, .tastyModal {
+            .modal {
+                &-dialog {
+                    max-width: 800px;
+                    margin: 1.75rem auto;
+                }
+
+                &-header {
+                    border-radius: 20px 20px 0 0;
+                    padding: 185px 0;
+                    background: url("../images/aboutModalBg.png") no-repeat center top $orange;
+
+                    .section__title {
+                        color: $pink;
+                    }
+
+                    p {
+                        font-size: 36px;
+                        max-width: none;
+                    }
+                }
+
+                &-body {
+                    .textBlock {
+                        padding-right: 40px;
+                        padding-left: 40px;
+
+                        h3 {
+                            font-size: 36px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tastyModal {
+            .modal {
+                &-header {
+                    padding: 197px 0 236px;
+                    
+                    &:before {
+                        background: url("../images/tastyModalBg.png") no-repeat center top;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .tasty {
+        background: url("../images/tastyMobBg.svg") no-repeat center / cover;
+        .container {
+            padding-bottom: 400px;
+        }
+
+        .section__title__block {
+            margin-top: 154px;
+
+            img {
+                width: 157px;
+            }
+        }
+
+        .section__title {
+            margin-top: 150px;
+        }
+
+        ul {
+            flex-direction: column;
+            align-items: center;
+
+            li {
+
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+
+                &:nth-child(n) {
+                    margin-right: 0;
+                }
+
+                width: 100%;
+                max-width: 350px;
+            }
+
+            div {
+                width: calc(100% + 2px);
+            }
+        }  
+
+        .menu {
+            .img {
+                left: 50%;
+                transform: translateX(-50%);
+                top: auto;
+                bottom: -332px;
+                width: 100%;
+                max-width: 334px;
+            }
+
+            strong {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 370px) {
+    .tasty {
+        .aboutModal, .tastyModal {
+            .modal {
+                &-header {
+                    padding: 177px 0 266px;
+                    background-size: 330px auto;
+
+                    p {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+        
+        .tastyModal {
+            .modal {
+                &-header {
+                    &:before {
+                        background-size: 330px auto;
+                    }
+
+                    .section__title {
+                        font-size: 44px;
+                    }
+                }
+            }
+        }
+    }
+}

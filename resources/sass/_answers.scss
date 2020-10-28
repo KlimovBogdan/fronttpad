@@ -1,0 +1,432 @@
+.answers {
+    position: relative;
+    background: url('../images/answersBg.svg') no-repeat center 128px;
+
+    .container {
+        padding-top: 130px;
+        padding-bottom: 127px;
+        max-width: 920px;
+    }
+
+    .section__title__block {
+        margin-bottom: 60px;
+        text-align: center;
+        position: relative;
+
+        img {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -30px;
+        }
+    }
+
+    .categoriesList {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+
+        li {
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+            color: $brown;
+            font-weight: 700;
+            padding: 111px 20px 20px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $white;
+            max-width: 250px;
+            width: calc(33.333% - 13.333px);
+            text-align: center;
+            position: relative;
+            background-color: $white;
+
+            svg {
+                position: absolute;
+                left: 50%;
+                top: 20px;
+                transform: translateX(-50%);
+            }
+
+            &.active {
+                position: relative;
+                z-index: 1;
+                color: $white;
+                background-color: transparent;
+
+                svg {
+                    path {
+                        fill: $white;
+                    }
+                }
+
+                &:after {
+                   
+                    background: url("../images/answersActiveBg.svg") no-repeat center;
+                    border-radius: 10px;
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: calc(100% + 26px);
+                    z-index: -1;
+                }
+            }
+        }
+    }
+
+    .accordion {
+        .accordion__child {
+            transition: .4s;
+            display: none;
+            opacity: 0;
+
+            &:first-child {
+                opacity: 1;
+                display: block;
+            }
+        }
+
+        margin-top: 60px;
+        margin-bottom: 100px;
+
+        .card {
+            border-radius: 10px;
+            color: $black;
+            width: 100%;
+            border: 2px solid $gray;
+            transition: .3s;
+
+            &:hover {
+                border: 2px solid $pink;
+
+                h2 {
+                    color: $brown;
+                }
+
+                line {
+                    stroke: $pink;
+                }
+            }
+
+            &.collapsed {
+                color: red;
+            }
+            
+            &-header {
+                border-bottom: none;
+                padding: 25px 60px 25px 40px;
+                border-radius: 10px;
+                background: $white;
+                position: relative;
+                background: $white;
+                border: none;
+                box-shadow: none;
+                cursor: pointer;
+
+                h2 {
+                    background: $white;
+                    border: none;
+                    box-shadow: none;
+                    transition: .3s;
+                }
+
+                .extendBtn {
+                    position: absolute;
+                    top: 50%;
+                    right: 10px;
+                    transform: translateY(-50%);
+                    height: 60px;
+                    width: 60px;
+
+                    svg {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                        height: 35px;
+                        width: 35px;
+
+                        line {
+                            transition: .3s;
+                        }
+                    }
+
+                    .vertical {
+                        transform-origin: center;
+                    }
+                }
+            }
+
+            &-body {
+                padding: 0 60px 35px 40px;
+
+                p {
+                    &:not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+
+                    &.dot {
+                        padding-left: 18px;
+                        position: relative;
+                        
+                        &:before {
+                            position: absolute;
+                            content: "";
+                            left: 0;
+                            top: 6px;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background: $gradient;
+                        }
+                    }
+                }
+            }
+            
+            h2 {
+                font-size: 24px;
+                font-weight: 700;
+                text-align: left;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .questions {
+        li {
+            &:not(:last-child) {
+                margin-bottom: 60px;
+            }
+
+            p {
+                font-size: 18px;
+                color: $black;
+
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            strong {
+                display: block;
+                margin-bottom: 20px;
+                font-size: 24px;
+                color: $black;
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .answers {
+        background: none;
+        position: relative;
+        overflow: hidden;
+        
+        &:after {
+            content: "";
+            position: absolute;
+            top: 39px;
+            right: 10%;
+            width: 37px;
+            height: 37px;
+            background: url("../images/answersBgDecor1.png") no-repeat center;
+        }
+
+        .categoriesList {
+            position: relative;
+            z-index: 1;
+
+            &:after {
+                z-index: -1;
+                content: "";
+                position: absolute;
+                top: -32px;
+                right: -49px;
+                width: 84px;
+                height: 84px;
+                background: url("../images/answersBgDecor2.png") no-repeat center;
+            }
+        }
+
+        .accordion {
+            position: relative;
+            z-index: 1;
+
+            &:after {
+                z-index: -1;
+                content: "";
+                position: absolute;
+                top: -9px;
+                left: -70px;
+                width: 151px;
+                height: 136px;
+                background: url("../images/answersBgDecor3.png") no-repeat center;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: -111px;
+                right: -30px;
+                width:  81px;
+                height: 81px;
+                background: url("../images/answersBgDecor4.png") no-repeat center;
+            }
+        }
+
+        .questions {
+            li {
+                &:nth-child(2) {
+                    position: relative;
+                    z-index: 1;
+
+                    &:after {
+                        z-index: -1;
+                        content: "";
+                        position: absolute;
+                        top: 100%;
+                        right: -12px;
+                        width: 24px;
+                        height: 24px;
+                        background: url("../images/answersBgDecor5.png") no-repeat center;
+                    }
+                }
+
+                &:nth-child(3) {
+                    position: relative;
+                    z-index: 1;
+
+                    &:after {
+                        z-index: -1;
+                        content: "";
+                        position: absolute;
+                        bottom: -25px;
+                        right: 0;
+                        width: 68px;
+                        height: 15px;
+                        background: url("../images/answersBgDecor6.png") no-repeat center;
+                    }
+                }
+
+                &:nth-child(4) {
+                    position: relative;
+                    z-index: 1;
+
+                    &:after {
+                        z-index: -1;
+                        content: "";
+                        position: absolute;
+                        bottom: -104px;
+                        right: 51px;
+                        width: 94px;
+                        height: 94px;
+                        background: url("../images/answersBgDecor7.png") no-repeat center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .answers {
+
+        .section__title__block {
+            margin-bottom: 40px;
+            
+            h2 {
+                line-height: 1;
+            }
+        }
+
+        .categoriesList {
+            li {
+                font-size: 12px;
+                width: calc(33.333% - 2.667px);
+                padding: 62px 8px 12px;
+
+                &:nth-child(n) {
+                    svg {
+                        width: 50px;
+                        height: 50px;
+                        top: 8px
+                    }
+                }
+
+                p {
+                    max-width: 150px;
+                }
+
+                &.active {
+                    &:after {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        .questions {
+            li {
+                &:not(:last-child) {
+                    margin-bottom: 40px;
+                }
+
+                strong {
+                    margin-bottom: 10px;
+                    font-size: 18px;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .accordion {
+            margin-top: 40px;
+
+            .card {
+                h2 {
+                    font-size: 18px;
+                }
+
+                &-header {
+                    padding: 19px 60px 19px 19px;
+
+                    .extendBtn {
+                        right: 0;
+                        svg {
+                            height: 25px;
+                            width: 25px;
+                        }
+                    }
+                }
+
+                &-body {
+                    padding: 0px 20px 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 370px) {
+    .answers {
+        .categoriesList {
+            li {
+                font-size: 10px;
+            }
+        }
+    }
+}

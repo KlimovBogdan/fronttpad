@@ -1,0 +1,130 @@
+.about {
+    text-align: center;
+
+    .container {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+
+    h3 {
+        color: $brown;
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 64px;
+        margin-top: 10px;
+    }
+
+    .quote {
+        font-size: 18px;
+        margin-bottom: 40px;
+        color: $brown;
+        position: relative;
+        
+        img {
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+
+        li {
+            width: calc(33% - 13.333px);
+            max-width: 340px;
+            padding: 25px 20px 20px;
+            background-color: $orange;
+            border-radius: 10px;
+            color: $black;
+
+            &:first-child {
+                background: url("../images/aboutDecor1.svg") no-repeat 95% 10% $orange;
+                padding-right: 63px;
+
+                p {
+                    margin-bottom: 23px;
+                }
+            }
+
+            &:nth-child(2) {
+                position: relative;
+
+                img {
+                    position: absolute;
+                    right: 4px;
+                    top: -34px;
+                }
+            }
+
+            &:nth-child(3) {
+                background: url("../images/aboutDecor3.svg") no-repeat 95% 91% $orange;
+                position: relative;
+                z-index: 1;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    bottom: 100%;
+                    width: 180px;
+                    height: 170px;
+                    background: url("../images/aboutImg.png") no-repeat center;
+                    z-index: -1;
+                }
+            }
+
+            p {
+                margin-bottom: 12px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .about {
+        .container {
+            padding: 100px 20px 40px;
+        }
+
+        .section__title {
+            line-height: 0.9;
+        }
+
+        ul {
+            flex-direction: column;
+            align-items: center;
+
+            li {
+                width: 100%;
+                max-width: 430px;
+
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+
+                &:nth-child(3) {
+                    &:before {
+                        background: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .about {
+        .section__title {
+            max-width: 335px;
+            margin: 0 auto;
+        }
+
+        .quote {
+            font-size: 16px;
+        }
+    }
+}
